@@ -7,20 +7,8 @@ package com.gzmy.sort;
  * @Date 2019/12/17 9:03 AM
  * @Version 1.0
  */
-public class SelectSort {
-    /**
-     * 描述: 交换元素
-     *
-     * @author Dravin
-     * @date 9:05 AM 2019/12/17
-     * @param [arr, target_index, replace_index]
-     * @return void
-     **/
-    public void switchItem(int[] arr,int target_index,int replace_index){
-        int tmp = arr[target_index];
-        arr[target_index] = arr[replace_index];
-        arr[replace_index] = tmp;
-    }
+public class SelectSort extends Sort{
+
 
     /**
      * 描述: 求最小值的下标
@@ -49,11 +37,12 @@ public class SelectSort {
      * @param [arr]
      * @return void
      **/
+    @Override
     public void sort(int[] arr){
         for (int i = 0; i < arr.length-1; i++) {
             int one_min_index = minIndex(arr,i,arr.length-1);
             if(one_min_index!=i){
-                switchItem(arr,i,one_min_index);
+                swap(arr,i,one_min_index);
             }
 
         }
